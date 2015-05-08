@@ -6,6 +6,8 @@ data <- read.csv.sql("household_power_consumption.txt",
                      sep=";",
                      sql="select * from file where Date = '1/2/2007' or Date='2/2/2007'",
                      colClasses=c("character", "character", rep("numeric", 7)))
+# Close the connection to the file that was opened by read.csv.sql
+closeAllConnections()
 
 
 # Turn Dates and Times into datetime objects
