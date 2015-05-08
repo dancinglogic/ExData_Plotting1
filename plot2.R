@@ -9,7 +9,6 @@ data <- read.csv.sql("household_power_consumption.txt",
 
 
 # Turn Dates and Times into datetime objects
-data$NewDate <- as.Date(data$Date, format="%d/%m/%Y")
 data$datetime <- as.POSIXct(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 
 #plot

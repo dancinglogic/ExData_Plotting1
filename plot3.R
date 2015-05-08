@@ -9,13 +9,7 @@ data <- read.csv.sql("household_power_consumption.txt",
 
 
 # Turn Dates and Times into datetime objects
-data$NewDate <- as.Date(data$Date, format="%d/%m/%Y")
 data$datetime <- as.POSIXct(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
-
-# want x axis to go from min date to max date
-xlimits <- c(min(data$datetime), max(data$datetime))
-# want y axis to go from 0 to max submetering value
-ylimits <- c(0, max(data$Sub_metering_1, data$Sub_metering_2, data$Sub_metering_3))
 
 #plot
 png("plot3.png", width=480, height=480)
